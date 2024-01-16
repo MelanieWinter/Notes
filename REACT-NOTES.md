@@ -106,9 +106,37 @@ nodemon server
 
 *Browsing to `localhost:3001` will display the built production React app*
 
-*To update the React app's production code, use: `npm run build`*
+*To update the React app's production code when ready for production, use: `npm run build`*
 
 ## Configure React for MERN-Stack Development
+
+To develop a MERN-Stack app, you'll need **two separate** terminal sessions for running:
+
+1. The Express backend
+2. React’s development server
+
+### Ensure that the React Dev Server Sends AJAX Calls to the Express Server
+
+Add a "proxy" property in the **package.json** (be sure that it's a "top-level" property)
+
+```json
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "http://localhost:3001"
+}
+```
+*Restart dev server*
+
 
 
 
